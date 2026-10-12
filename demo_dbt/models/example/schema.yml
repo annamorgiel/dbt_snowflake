@@ -1,5 +1,19 @@
 version: 2
 
+sources:
+  - name: music
+    description: "my music table"
+    database: LIORA_DB
+    schema: PUBLIC
+    tables:
+      - name: album
+      - name: artist
+      - name: genre
+      - name: track
+      - name: playlist
+
+
+
 models:
   - name: my_first_dbt_model
     description: "A starter dbt model"
@@ -32,3 +46,14 @@ models:
       - name: country_region
         tests:
           - switzerland
+
+  - name: stg_album
+    description: "staging for album"
+    columns:
+      - name: albumid
+        config: 
+          tags: ['setup']
+        data_tests:
+          - unique
+          - not_null
+
