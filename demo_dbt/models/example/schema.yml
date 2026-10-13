@@ -104,3 +104,61 @@ models:
       - name: track_id
         data_tests:
           - not_null
+
+  - name: dim_artist
+    description: "Dimension table for artists"
+    columns:
+      - name: artist_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_album
+    description: "Dimension table for albums"
+    columns:
+      - name: album_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_genre
+    description: "Dimension table for genres"
+    columns:
+      - name: genre_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_media_type
+    description: "Dimension table for media types"
+    columns:
+      - name: media_type_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_playlist
+    description: "Dimension table for playlists"
+    columns:
+      - name: playlist_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_track
+    description: "Dimension table for tracks"
+    columns:
+      - name: track_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: bridge_playlist_track
+    description: "Fact table for playlist tracks"
+    columns:
+      - name: playlist_id
+        data_tests:
+          - not_null
+      - name: track_id
+        data_tests:
+          - not_null
