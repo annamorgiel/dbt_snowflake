@@ -3,15 +3,16 @@ version: 2
 sources:
   - name: music
     description: "my music table"
-    database: LIORA_DB
+    database: DEMO_DB
     schema: PUBLIC
     tables:
-      - name: album
+- name: album
       - name: artist
       - name: genre
       - name: track
       - name: playlist
-
+      - name: mediatype
+      - name: playlisttrack
 
 
 models:
@@ -33,7 +34,7 @@ models:
           - unique
           - not_null
 
-  - name: my_first_join
+            - name: my_first_join
     description: "A starter dbt model"
     columns:
       - name: name
@@ -47,13 +48,77 @@ models:
         tests:
           - switzerland
 
-  - name: stg_album
-    description: "staging for album"
+models:
+  - name: stg_artist
+    description: "staging for artist"
     columns:
-      - name: albumid
+      - name: artist_id
         config: 
           tags: ['setup']
         data_tests:
           - unique
           - not_null
 
+  - name: stg_album
+    description: "staging for album"
+    columns:
+      - name: album_id
+        config: 
+          tags: ['setup']
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_media_type
+    description: "staging for media type"
+    columns:
+      - name: media_type_id
+        config: 
+          tags: ['setup']
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_genre
+    description: "staging for genre"
+    columns:
+      - name: genre_id
+        config: 
+          tags: ['setup']
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_track
+    description: "staging for track"
+    columns:
+      - name: track_id
+        config: 
+          tags: ['setup']
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_playlist
+    description: "staging for playlist"
+    columns:
+      - name: playlist_id
+        config: 
+          tags: ['setup']
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_playlist_track
+    description: "staging for playlist track mapping"
+    columns:
+      - name: playlist_id
+        config: 
+          tags: ['setup']
+        data_tests:
+          - not_null
+      - name: track_id
+        config: 
+          tags: ['setup']
+        data_tests:
+          - not_null
