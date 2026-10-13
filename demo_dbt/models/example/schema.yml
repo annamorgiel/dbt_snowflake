@@ -6,14 +6,13 @@ sources:
     database: DEMO_DB
     schema: PUBLIC
     tables:
-  - name: album
-        - name: artist
-        - name: genre
-        - name: track
-        - name: playlist
-        - name: mediatype
-        - name: playlisttrack
-
+      - name: album
+      - name: artist
+      - name: genre
+      - name: track
+      - name: playlist
+      - name: mediatype
+      - name: playlisttrack
 
 models:
   - name: my_first_dbt_model
@@ -34,7 +33,7 @@ models:
           - unique
           - not_null
 
-            - name: my_first_join
+  - name: my_first_join
     description: "A starter dbt model"
     columns:
       - name: name
@@ -48,7 +47,6 @@ models:
         tests:
           - switzerland
 
-models:
   - name: stg_artist
     description: "staging for artist"
     columns:
