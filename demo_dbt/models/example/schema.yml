@@ -6,13 +6,13 @@ sources:
     database: DEMO_DB
     schema: PUBLIC
     tables:
-- name: album
-      - name: artist
-      - name: genre
-      - name: track
-      - name: playlist
-      - name: mediatype
-      - name: playlisttrack
+  - name: album
+        - name: artist
+        - name: genre
+        - name: track
+        - name: playlist
+        - name: mediatype
+        - name: playlisttrack
 
 
 models:
