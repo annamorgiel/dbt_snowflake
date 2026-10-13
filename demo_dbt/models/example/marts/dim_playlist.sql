@@ -2,5 +2,5 @@
 
 select 
     playlist_id, 
-    name 
+    playlist_name 
 from {{ ref('stg_playlist') }}

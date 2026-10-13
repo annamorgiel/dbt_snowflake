@@ -2,5 +2,5 @@
 
 select 
     media_type_id, 
-    name 
+    media_type_name 
 from {{ ref('stg_media_type') }}

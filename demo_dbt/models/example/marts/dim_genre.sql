@@ -2,5 +2,5 @@
 
 select 
     genre_id, 
-    name 
+    genre_name 
 from {{ ref('stg_genre') }}
