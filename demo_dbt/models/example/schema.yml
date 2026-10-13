@@ -33,90 +33,74 @@ models:
           - unique
           - not_null
 
-  - name: my_first_join
-    description: "A starter dbt model"
-    columns:
-      - name: name
-        tests:
-          - switzerland
-
-  - name: COVID19_Epidemiological_Data_APPLE_MOBILITY
-    description: "A starter dbt model"
-    columns:
-      - name: country_region
-        tests:
-          - switzerland
-
   - name: stg_artist
     description: "staging for artist"
+    config: 
+      tags: ['setup']
     columns:
       - name: artist_id
-        config: 
-          tags: ['setup']
         data_tests:
           - unique
           - not_null
 
   - name: stg_album
     description: "staging for album"
+    config: 
+      tags: ['setup']
     columns:
       - name: album_id
-        config: 
-          tags: ['setup']
         data_tests:
           - unique
           - not_null
 
   - name: stg_media_type
     description: "staging for media type"
+    config: 
+      tags: ['setup']
     columns:
       - name: media_type_id
-        config: 
-          tags: ['setup']
         data_tests:
           - unique
           - not_null
 
   - name: stg_genre
     description: "staging for genre"
+    config: 
+      tags: ['setup']
     columns:
       - name: genre_id
-        config: 
-          tags: ['setup']
         data_tests:
           - unique
           - not_null
 
   - name: stg_track
     description: "staging for track"
+    config: 
+      tags: ['setup']
     columns:
       - name: track_id
-        config: 
-          tags: ['setup']
         data_tests:
           - unique
           - not_null
 
   - name: stg_playlist
     description: "staging for playlist"
+    config: 
+      tags: ['setup']
     columns:
       - name: playlist_id
-        config: 
-          tags: ['setup']
         data_tests:
           - unique
           - not_null
 
   - name: stg_playlist_track
     description: "staging for playlist track mapping"
+    config: 
+      tags: ['setup']
     columns:
       - name: playlist_id
-        config: 
-          tags: ['setup']
         data_tests:
           - not_null
       - name: track_id
-        config: 
-          tags: ['setup']
         data_tests:
           - not_null
