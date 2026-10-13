@@ -145,8 +145,8 @@ models:
           - unique
           - not_null
 
-  - name: dim_track
-    description: "Dimension table for tracks"
+  - name: fct_track
+    description: "Fact table for tracks"
     columns:
       - name: track_id
         data_tests:
